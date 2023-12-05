@@ -76,10 +76,11 @@ h1 {
 
 .action {
   position: relative;
-  width: 560px;
+  width: 44%;
 }
 .action .title {
-  width: 425px;
+  width: 100%;
+  box-sizing: border-box;
   display: block;
   border-radius: 20px;
   padding: 20px 0 20px 35px;
@@ -102,6 +103,7 @@ h1 {
   padding: 19px 30px 20px 30px;
   border-radius: 60px;
   cursor: pointer;
+  transform: translateX(50%);
 }
 @keyframes fadein {
   from {
@@ -120,5 +122,80 @@ h1 {
   to {
     opacity: 1;
     transform: translate(0% 0%);
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .wrap {
+    padding: 0 40px;
+  }
+  .wrap-content h1 {
+    font-size: 2rem;
+  }
+  .action .title {
+    padding: 20px 0 20px 20px;
+  }
+  .action .button {
+    transform: translateX(50%);
+    padding: 19px 15px 20px 15px;
+  }
+}
+
+/* 모바일 가로, 테블릿 세로 (해상도 480px ~ 767px)*/
+@media all and (min-width: 480px) and (max-width: 767px) {
+  /*스타일입력*/
+  /* .wrap::after {
+    width: 46%;
+    bottom: 240px;
+  } */
+}
+
+/* 모바일 가로, 테블릿 세로 (해상도 ~ 479px)*/
+@media all and (max-width: 479px) {
+  /*스타일입력*/
+  .wrap {
+    padding: 0 16px;
+    height: 100%;
+  }
+  .wrap::after {
+    width: 95%;
+    bottom: 30px;
+    right: -19px;
+  }
+  .wrap-content h1 {
+    letter-spacing: -0.5px;
+    font-size: 23px;
+    padding: 40px 0 0 0;
+  }
+  .text {
+    font-size: 14px;
+  }
+  .action {
+    width: 100%;
+    border-radius: 20px;
+  }
+  .action .title {
+    padding: 15px;
+    font-size: 14px;
+  }
+  .action .button {
+    transform: translateX(0%);
+    font-size: 18px;
+    padding: 15px;
+    bottom: 0;
+    right: -8px;
+  }
+  .function {
+    margin: 30px 0 40px;
+    gap: 20px;
+  }
+  .functionItem {
+    gap: 0;
+  }
+  .functionItem .title {
+    font-size: 18px;
+  }
+  .functionItem .desc {
+    font-size: 14px;
   }
 }
