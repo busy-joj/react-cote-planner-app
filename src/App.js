@@ -5,6 +5,13 @@ import ReactGA from "react-ga";
 import React, { useState } from "react";
 import "./pages/LandingPage/landing.css";
 import Modal from "./components/Modal";
+import TagManager from "react-gtm-module";
+
+const tagManagerArgs = {
+  gtmId: "GTM-WJB35G9Z",
+};
+
+TagManager.initialize(tagManagerArgs);
 
 const gaTrackingId = process.env.REACT_APP_GA_TRACKING_ID; // 환경 변수에 저장된 추적ID 가져오기
 ReactGA.initialize(gaTrackingId, { debug: true }); // react-ga 초기화 및 debug 사용
@@ -55,6 +62,7 @@ const App = () => {
               저희와 함께 관리하시고, 코테 해결하시죠!
             </span>
             <button
+              id="applyButton"
               className="button"
               onClick={() => {
                 setIsModalOpen(true);
