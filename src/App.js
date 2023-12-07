@@ -66,6 +66,11 @@ const App = () => {
               className="button"
               onClick={() => {
                 setIsModalOpen(true);
+                ReactGA.event({
+                  category: "Event",
+                  action: "Press apply button",
+                  label: "apply button",
+                });
               }}
             >
               USE NOW!
