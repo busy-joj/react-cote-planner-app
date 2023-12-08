@@ -10,6 +10,7 @@ const Modal = ({ setIsModalOpen }) => {
     let item = await addDoc(collection(db, "apply"), {
       email: value,
     }).then(setIsSuccess(true));
+    return item;
   };
   const inputEmail = useRef(null);
   const [validation, setValidation] = useState("");
