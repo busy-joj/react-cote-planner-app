@@ -2,7 +2,7 @@
 import "./App.css";
 import ReactGA from "react-ga4";
 // import LandingPage from "./pages/LandingPage";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./pages/LandingPage/landing.css";
 import Modal from "./components/Modal";
 import TagManager from "react-gtm-module";
@@ -15,9 +15,14 @@ TagManager.initialize(tagManagerArgs);
 
 const gaTrackingId = process.env.REACT_APP_GA_TRACKING_ID; // 환경 변수에 저장된 추적ID 가져오기
 ReactGA.initialize(gaTrackingId, { debug: true }); // react-ga 초기화 및 debug 사용
-ReactGA.pageview(window.location.pathname); // 추적하려는 page 설정
+// ReactGA.pageview(window.location.pathname); // 추적하려는 page 설정
 
 const App = () => {
+  useEffect(() => {
+      ReactGA.set({ page: window.location.pathname });
+      ReactGA.send("pageview");
+    
+  }, []);
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     // <BrowserRouter>
