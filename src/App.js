@@ -1,6 +1,6 @@
 // import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 // import LandingPage from "./pages/LandingPage";
 import React, { useState } from "react";
 import "./pages/LandingPage/landing.css";
