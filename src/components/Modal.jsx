@@ -36,12 +36,13 @@ const Modal = ({ setIsModalOpen }) => {
         {!isSuccess ? (
           <>
             <h2 className="modal-content-title">신청까지 단 3초!</h2>
-            <p>
+            <p>이메일을 작성하여 신청해주시면 프로젝트를 보내드립니다.</p>
+            {/* <p>
               저희의 서비스는 현재 열심히 개발되고 있습니다.
               <br /> 완성되는 즉시 여러분께 소식을 전해드릴 예정입니다. <br />
               <br />
               이를 위해 귀하의 이메일을 작성하여 신청부탁드립니다. <br />
-            </p>
+            </p> */}
             <div className="modal-form">
               <div className="modal-form-box">
                 <input
@@ -63,8 +64,6 @@ const Modal = ({ setIsModalOpen }) => {
           <>
             <h2 className="modal-content-title">신청완료</h2>
             <p>
-              빠른 시일 내에 완성하여 회신 드리겠습니다.
-              <br />
               저희 서비스에 관심 가져주셔서 진심으로 감사드립니다.
             </p>
           </>
